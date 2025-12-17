@@ -167,6 +167,8 @@ class LoadPromptsFromFile:
                             file_path = os.path.join(root, file)
                             rel_path = os.path.relpath(file_path, prompts_path)
                             prompt_files.append(rel_path)
+            # Sort alphabetically (case-insensitive)
+            prompt_files.sort(key=lambda x: x.lower())    
         except Exception:
             prompt_files = []
 
